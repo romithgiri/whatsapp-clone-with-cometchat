@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Cometchat</string>
+    <string name="title_activity_main_home">MainHomeActivity</string>
+    <string name="tab_chat">Chat</string>
+    <string name="tab_grp_chat">Group Chat</string>
+    <string name="tab_new_chat">New Chat</string>
+
+    <string name="voice_call">Voice Call</string>
+    <string name="video_call">Video Call</string>
+    <string name="block">Block</string>
+    <string name="block_list">Blocked Users</string>
+    <string name="new_group">New group</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="loading">Loading</string>
+    <string name="save_dp">Save Profile Pic</string>
+
+</resources>

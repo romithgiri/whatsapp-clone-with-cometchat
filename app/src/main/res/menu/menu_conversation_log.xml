@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_profile_info"
+        android:title="Profile Info"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_info"/>
+
+    <item
+        android:icon="@drawable/ic_more"
+        android:id="@+id/algo"
+        app:showAsAction="always"
+        android:title="">
+
+        <menu>
+            <item
+                android:id="@+id/menu_make_voice_call"
+                android:icon="@drawable/ic_voice_call"
+                android:title="@string/voice_call"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_make_video_call"
+                android:icon="@drawable/ic_video_call"
+                android:title="@string/video_call"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/menu_block"
+                android:icon="@drawable/ic_block"
+                android:title="@string/block"
+                app:showAsAction="never" />
+        </menu>
+
+    </item>
+
+
+</menu>

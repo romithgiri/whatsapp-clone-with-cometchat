@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/cardChat"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/display_pic_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/circular_bg"
+        android:backgroundTint="#E1E1E1"
+        android:src="@drawable/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/display_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical"
+        android:text="Rohit Giri"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_line_groups"
+        app:layout_constraintEnd_toStartOf="@+id/display_time"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+        app:layout_constraintTop_toTopOf="@+id/display_pic_img" />
+
+    <TextView
+        android:id="@+id/display_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="2dp"
+        android:text="Yesterday"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/display_name_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/display_name_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/display_name_tv" />
+
+    <ImageView
+        android:id="@+id/iv_unread_message_counter"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/green_circular_bg"
+        android:backgroundTint="?attr/colorAccent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_time" />
+
+    <TextView
+        android:id="@+id/tv_unread_message_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_unread_message_counter"
+        app:layout_constraintEnd_toEndOf="@+id/iv_unread_message_counter"
+        app:layout_constraintStart_toStartOf="@+id/iv_unread_message_counter"
+        app:layout_constraintTop_toTopOf="@+id/iv_unread_message_counter"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/text_line_groups"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        app:constraint_referenced_ids="group_sent_message, group_online_typing_status"
+        app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+        app:layout_constraintEnd_toStartOf="@+id/iv_unread_message_counter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_tv"
+        android:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_sent_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+        app:layout_constraintEnd_toStartOf="@+id/iv_unread_message_counter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_tv">
+
+
+        <ImageView
+            android:id="@+id/display_message_status"
+            android:layout_width="16dp"
+            android:visibility="gone"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_check_sent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/display_file_type_ic"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_attachment"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/display_message_status"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/group_sent_message_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="display_message_status, display_file_type_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/display_file_type_ic"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_group_sent_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="Message"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/group_sent_message_barrier"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.83" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_online_typing_status"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/display_pic_img"
+        app:layout_constraintEnd_toStartOf="@+id/iv_unread_message_counter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/display_pic_img"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_tv">
+
+        <TextView
+            android:id="@+id/tv_online_typing_status"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/display_name_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
